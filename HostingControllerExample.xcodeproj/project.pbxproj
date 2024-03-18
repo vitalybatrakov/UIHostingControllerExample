@@ -17,6 +17,7 @@
 		BC93EF332BA762E300DC33E3 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BC93EF322BA762E300DC33E3 /* SnapKit-Dynamic */; };
 		BC93EF362BA7631700DC33E3 /* UIViewController+SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93EF352BA7631700DC33E3 /* UIViewController+SwiftUIView.swift */; };
 		BC93EF382BA76A9F00DC33E3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93EF372BA76A9F00DC33E3 /* SwiftUIView.swift */; };
+		BC93EF3C2BA7DC2E00DC33E3 /* UIView+SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93EF3B2BA7DC2E00DC33E3 /* UIView+SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BC93EF292BA7620F00DC33E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC93EF352BA7631700DC33E3 /* UIViewController+SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SwiftUIView.swift"; sourceTree = "<group>"; };
 		BC93EF372BA76A9F00DC33E3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		BC93EF3B2BA7DC2E00DC33E3 /* UIView+SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SwiftUIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				BC93EF352BA7631700DC33E3 /* UIViewController+SwiftUIView.swift */,
+				BC93EF3B2BA7DC2E00DC33E3 /* UIView+SwiftUIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC93EF202BA7620C00DC33E3 /* ViewController.swift in Sources */,
+				BC93EF3C2BA7DC2E00DC33E3 /* UIView+SwiftUIView.swift in Sources */,
 				BC93EF362BA7631700DC33E3 /* UIViewController+SwiftUIView.swift in Sources */,
 				BC93EF1C2BA7620C00DC33E3 /* AppDelegate.swift in Sources */,
 				BC93EF1E2BA7620C00DC33E3 /* SceneDelegate.swift in Sources */,
