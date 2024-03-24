@@ -4,11 +4,7 @@ import SwiftUI
 extension UIView {
     func addSwiftUIView<T: View>(view: T) {
         let hostingController = UIHostingController(rootView: view)
-        if #available(iOS 16.0, *) {
-            hostingController.sizingOptions = [.intrinsicContentSize]
-        }
         addSubview(hostingController.view)
-        hostingController.view.backgroundColor = .clear
         hostingController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -16,20 +12,16 @@ extension UIView {
     
     func addSwiftUIView2<T: View>(view: T) -> UIHostingController<T> {
         let hostingController = UIHostingController(rootView: view)
-        if #available(iOS 16.0, *) {
-            hostingController.sizingOptions = [.intrinsicContentSize]
-        }
         addSubview(hostingController.view)
-        hostingController.view.backgroundColor = .clear
         hostingController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         return hostingController
     }
     
-    func hostSwiftUIView<T: View>(view: T) {
-        guard let vc = findViewController() else { return }
-        vc.hostSwiftUIView(
+    func hostSwiftUIView<T: View>(view: T) -> UIHostingController<T>? {
+        guard let vc = findViewController() else { return nil }
+        return vc.hostSwiftUIView(
             view: view,
             insideView: self
         )

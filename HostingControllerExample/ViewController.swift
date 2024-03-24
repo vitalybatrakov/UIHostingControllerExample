@@ -68,7 +68,11 @@ class ViewController: UIViewController {
     
     func addSwiftUIViewAndRetainHostingController() {
         // UIHostingController isn't set up properly, only retained in current vc
-        hostingController = view2.addSwiftUIView2(view: SwiftUIView())
+        let hostingController = view2.addSwiftUIView2(view: SwiftUIView())
+        if #available(iOS 16.0, *) {
+            hostingController.sizingOptions = [.intrinsicContentSize]
+        }
+        self.hostingController = hostingController
     }
     
     // MARK: 3 case - UIHostingController set up properly
@@ -77,10 +81,13 @@ class ViewController: UIViewController {
         // If you add SwiftUI from some UIView and have no access to VC
         // You can find VC using responder chain
         // guard let vc = view2.findViewController() else { return }
-        hostSwiftUIView(
+        let hostingController = hostSwiftUIView(
             view: SwiftUIView(),
             insideView: view2
         )
+        if #available(iOS 16.0, *) {
+            hostingController.sizingOptions = [.intrinsicContentSize]
+        }
     }
 }
 
