@@ -3,16 +3,12 @@ Example project to test automatic size updates of UIHostingView
 
 ```
 extension UIViewController {
+    @discardableResult
     func hostSwiftUIView<T: View>(
         view: T,
-        insideView hostView: UIView? = nil,
-        useIntrinsicContentSizeForSizing: Bool = true
-    ) {
+        insideView hostView: UIView? = nil
+    ) -> UIHostingController<T> {
         let hostingController = UIHostingController(rootView: view)
-        if #available(iOS 16.0, *), useIntrinsicContentSizeForSizing {
-            hostingController.sizingOptions = [.intrinsicContentSize]
-        }
-        hostingController.view.backgroundColor = .clear
         addChild(hostingController)
         hostingController.didMove(toParent: self)
         if let hostView {
@@ -23,16 +19,17 @@ extension UIViewController {
         hostingController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        if #available(iOS 16.0, *) {
+            hostingController.sizingOptions = [.intrinsicContentSize]
+        }
+        return hostingController
     }
 }
 ```
 
 Usage:
 ```
-hostSwiftUIView(
-    view: SwiftUIView(),
-    insideView: view
-)
+hostSwiftUIView(view: SwiftUIView())
 ```
 
 https://github.com/vitalybatrakov/UIHostingControllerExample/assets/20704616/b695c4c3-ba1a-4ab2-82ea-f2c4354f427d
