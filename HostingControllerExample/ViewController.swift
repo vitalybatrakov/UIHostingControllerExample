@@ -9,11 +9,14 @@ class ViewController: UIViewController {
     let view1 = UIView()
     let view2 = UIView()
     let view3 = UIView()
+    
+    let button = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
         setupSwiftUIView()
+        setupButtonToPresentPopover()
     }
 
     func setupLayout() {
@@ -68,11 +71,7 @@ class ViewController: UIViewController {
     
     func addSwiftUIViewAndRetainHostingController() {
         // UIHostingController isn't set up properly, only retained in current vc
-        let hostingController = view2.addSwiftUIView2(view: SwiftUIView())
-        if #available(iOS 16.0, *) {
-            hostingController.sizingOptions = [.intrinsicContentSize]
-        }
-        self.hostingController = hostingController
+        hostingController = view2.addSwiftUIView2(view: SwiftUIView())
     }
     
     // MARK: 3 case - UIHostingController set up properly
@@ -81,13 +80,25 @@ class ViewController: UIViewController {
         // If you add SwiftUI from some UIView and have no access to VC
         // You can find VC using responder chain
         // guard let vc = view2.findViewController() else { return }
-        let hostingController = hostSwiftUIView(
-            view: SwiftUIView(),
-            insideView: view2
-        )
-        if #available(iOS 16.0, *) {
-            hostingController.sizingOptions = [.intrinsicContentSize]
+        hostSwiftUIView(view: SwiftUIView(), insideView: view2)
+    }
+    
+    // MARK: Popover with .preferredContentSize option enabled doesn't work properly
+    
+    func setupButtonToPresentPopover() {
+        view3.addSubview(button)
+        button.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
+        button.setTitle("Present popover", for: .normal)
+        button.addTarget(self, action: #selector(showPopover), for: .touchUpInside)
+    }
+    
+    @objc private func showPopover() {
+        presentPopover(
+            withSwiftUIView: SwiftUIView(),
+            sourceView: button
+        )
     }
 }
 
