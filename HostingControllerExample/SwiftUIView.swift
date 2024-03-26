@@ -3,6 +3,8 @@ import SwiftUI
 struct SwiftUIView: View {
     @State var flag = true
     
+    var onUpdateContent: (() -> Void)?
+    
     var body: some View {
         HStack {
             if flag {
@@ -20,6 +22,12 @@ struct SwiftUIView: View {
             }
             
             Spacer()
+        }
+        .onChange(of: flag) { value in
+            onUpdateContent?()
+        }
+        .onAppear {
+            onUpdateContent?()
         }
     }
 }

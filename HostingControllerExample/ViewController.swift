@@ -57,6 +57,7 @@ class ViewController: UIViewController {
 //        addSwiftUIView()
 //        addSwiftUIViewAndRetainHostingController()
         hostSwiftUIView()
+//        hostSwiftUIViewIfYouStillSupportOS15()
     }
     
     // MARK: 1 case - Size updates doesn't work properly
@@ -81,6 +82,15 @@ class ViewController: UIViewController {
         // You can find VC using responder chain
         // guard let vc = view2.findViewController() else { return }
         hostSwiftUIView(view: SwiftUIView(), insideView: view2)
+    }
+    
+    // MARK: 4 case - If you still support iOS 15
+    
+    func hostSwiftUIViewIfYouStillSupportOS15() {
+        let swiftUIView = SwiftUIView { [weak self] in
+            self?.hostingController?.view.setNeedsUpdateConstraints()
+        }
+        hostingController = hostSwiftUIView(view: swiftUIView, insideView: view2)
     }
     
     // MARK: Popover with .preferredContentSize option enabled doesn't work properly
