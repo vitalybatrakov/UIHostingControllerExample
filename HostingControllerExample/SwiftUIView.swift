@@ -17,13 +17,13 @@ struct SwiftUIView: View {
                 .background(Color.blue)
             }
             
-            Button("Switch height") {
+            Button("Change size") {
                 flag.toggle()
             }
             
             Spacer()
         }
-        .onChange(of: flag) { value in
+        .onChange(of: flag) { _ in
             onUpdateContent?()
         }
         .onAppear {

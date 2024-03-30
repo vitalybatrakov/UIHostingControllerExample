@@ -18,6 +18,7 @@
 		BC93EF362BA7631700DC33E3 /* UIViewController+SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93EF352BA7631700DC33E3 /* UIViewController+SwiftUIView.swift */; };
 		BC93EF382BA76A9F00DC33E3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93EF372BA76A9F00DC33E3 /* SwiftUIView.swift */; };
 		BC93EF3C2BA7DC2E00DC33E3 /* UIView+SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93EF3B2BA7DC2E00DC33E3 /* UIView+SwiftUIView.swift */; };
+		BCE276852BB7B88C00B5D07B /* UIViewController+popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE276842BB7B88C00B5D07B /* UIViewController+popover.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BC93EF352BA7631700DC33E3 /* UIViewController+SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SwiftUIView.swift"; sourceTree = "<group>"; };
 		BC93EF372BA76A9F00DC33E3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		BC93EF3B2BA7DC2E00DC33E3 /* UIView+SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SwiftUIView.swift"; sourceTree = "<group>"; };
+		BCE276842BB7B88C00B5D07B /* UIViewController+popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+popover.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		BC93EF342BA762F700DC33E3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BCE276842BB7B88C00B5D07B /* UIViewController+popover.swift */,
 				BC93EF352BA7631700DC33E3 /* UIViewController+SwiftUIView.swift */,
 				BC93EF3B2BA7DC2E00DC33E3 /* UIView+SwiftUIView.swift */,
 			);
@@ -188,6 +191,7 @@
 				BC93EF1C2BA7620C00DC33E3 /* AppDelegate.swift in Sources */,
 				BC93EF1E2BA7620C00DC33E3 /* SceneDelegate.swift in Sources */,
 				BC93EF382BA76A9F00DC33E3 /* SwiftUIView.swift in Sources */,
+				BCE276852BB7B88C00B5D07B /* UIViewController+popover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

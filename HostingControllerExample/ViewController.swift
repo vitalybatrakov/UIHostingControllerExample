@@ -57,7 +57,7 @@ class ViewController: UIViewController {
 //        addSwiftUIView()
 //        addSwiftUIViewAndRetainHostingController()
         hostSwiftUIView()
-//        hostSwiftUIViewIfYouStillSupportOS15()
+//        hostSwiftUIViewIfYouNeedToSupportOS15()
     }
     
     // MARK: 1 case - Size updates doesn't work properly
@@ -84,9 +84,9 @@ class ViewController: UIViewController {
         hostSwiftUIView(view: SwiftUIView(), insideView: view2)
     }
     
-    // MARK: 4 case - If you still support iOS 15
+    // MARK: 4 case - If you need to support iOS 15 or earlier version
     
-    func hostSwiftUIViewIfYouStillSupportOS15() {
+    func hostSwiftUIViewIfYouNeedToSupportOS15() {
         let swiftUIView = SwiftUIView { [weak self] in
             self?.hostingController?.view.setNeedsUpdateConstraints()
         }
@@ -105,8 +105,9 @@ class ViewController: UIViewController {
     }
     
     @objc private func showPopover() {
-        presentPopover(
-            withSwiftUIView: SwiftUIView(),
+        hostingController = presentPopover(
+            withSwiftUIView: SwiftUIView()
+                .frame(idealWidth: 250, minHeight: 40),
             sourceView: button
         )
     }
