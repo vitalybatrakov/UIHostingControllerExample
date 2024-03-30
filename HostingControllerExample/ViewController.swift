@@ -105,7 +105,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func showPopover() {
-        hostingController = presentPopover(
+        presentPopover(
             withSwiftUIView: SwiftUIView()
                 .frame(idealWidth: 250, minHeight: 40),
             sourceView: button
