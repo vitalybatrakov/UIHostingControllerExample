@@ -15,8 +15,8 @@ extension UIViewController {
         } else {
             self.view.addSubview(hostingController.view)
         }
-        hostingController.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        hostingController.view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         if #available(iOS 16.0, *) {
             hostingController.sizingOptions = [.intrinsicContentSize]

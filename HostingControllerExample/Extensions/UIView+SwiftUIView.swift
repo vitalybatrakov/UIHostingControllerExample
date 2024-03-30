@@ -5,8 +5,8 @@ extension UIView {
     func addSwiftUIView<T: View>(view: T) {
         let hostingController = UIHostingController(rootView: view)
         addSubview(hostingController.view)
-        hostingController.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        hostingController.view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         if #available(iOS 16.0, *) {
             hostingController.sizingOptions = [.intrinsicContentSize]
@@ -16,8 +16,8 @@ extension UIView {
     func addSwiftUIView2<T: View>(view: T) -> UIHostingController<T> {
         let hostingController = UIHostingController(rootView: view)
         addSubview(hostingController.view)
-        hostingController.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        hostingController.view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         if #available(iOS 16.0, *) {
             hostingController.sizingOptions = [.intrinsicContentSize]
