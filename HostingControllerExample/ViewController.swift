@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         hostingController = hostSwiftUIView(view: swiftUIView, insideView: view2)
     }
     
-    // MARK: Popover with .preferredContentSize option enabled doesn't work properly
+    // MARK: Popover with .preferredContentSize option
     
     func setupButtonToPresentPopover() {
         view3.addSubview(button)
